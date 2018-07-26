@@ -1,0 +1,15 @@
+.toDo-form {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.toDo-creation {
+    width: 60%;
+}
+
+.toDo-form>div{
+    padding-top: 25px;
+    
+}
