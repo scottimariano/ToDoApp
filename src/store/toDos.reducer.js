@@ -2,7 +2,7 @@
 const initialState = {
     toDos: [],
     username: '',
-    gotUser: false
+    loading: false
 };
 
 export default function toDosReducer(state = initialState, action) {
@@ -35,6 +35,18 @@ export default function toDosReducer(state = initialState, action) {
             return {
                 ...state,
                 username: '',
+            }
+
+        case 'LOADING_ON':
+            return {
+                ...state,
+                loading: true,
+            }
+
+        case 'LOADING_OFF':
+            return {
+                ...state,
+                loading: false,
             }
 
         default:

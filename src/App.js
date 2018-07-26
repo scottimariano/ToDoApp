@@ -11,6 +11,7 @@ import deleteToDo from './store/actions/delete.toDo';
 import addToDo from './store/actions/add.toDo';
 import userLogin from './store/actions/userLogin';
 import userLogout from './store/actions/userLogout';
+import Loading from './Loading/Loading';
 
 class App extends Component {
 
@@ -64,7 +65,7 @@ class App extends Component {
                     />
                   ))}
                 </div>
-
+                {this.props.loading ? <Loading/>:null}
               </div>
             </div>
           )} />
@@ -77,6 +78,7 @@ const mapStateToProps = (state) => {
   return {
     toDos: state.toDos,
     username: state.username,
+    loading: state.loading
   };
 };
 
