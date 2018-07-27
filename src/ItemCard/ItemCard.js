@@ -7,22 +7,23 @@ export default class ItemCard extends Component {
   render() {
     return (
       <div className="ItemCard">
-        <ItemCardTitle 
+        <ItemCardTitle
           title={this.props.title}
-          preview={this.props.preview} 
+          preview={this.props.preview}
         />
-        
+
         <div className="ItemCardContainer">
-          <span> 
+          <span>
             {this.props.preview ? this.props.description || 'Descripcion' : this.props.description}
           </span>
         </div>
-        
-        {this.props.handleClick ?
-          <button className="danger" onClick={this.props.handleClick}>Delete</button> 
-        : null}
-        
-      </div>        
+          <button className="danger" onClick={this.props.handleClickEdit}>Edit</button>
+
+        {this.props.handleClickDelete ?
+          <button className="danger" onClick={this.props.handleClickDelete}>Delete</button>
+          : null}
+
+      </div>
     );
   }
 }

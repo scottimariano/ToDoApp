@@ -1,19 +1,14 @@
 {
   "toDos": [
     {
-      "title": "Mariano",
-      "description": "SCotti",
+      "title": "Tarea 1",
+      "description": "Esta es la tarea 1",
+      "id": 1
+    },
+    {
+      "title": "Mariano2 ",
+      "description": "asfjasdf",
       "id": 2
-    },
-    {
-      "title": "Mariano",
-      "description": "sdotti",
-      "id": 4
-    },
-    {
-      "title": "Mariano",
-      "description": "sfsfs",
-      "id": 5
     }
   ]
 }

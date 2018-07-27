@@ -12,6 +12,7 @@ import addToDo from './store/actions/add.toDo';
 import userLogin from './store/actions/userLogin';
 import userLogout from './store/actions/userLogout';
 import Loading from './Loading/Loading';
+import EditForm from './EditForm/EditForm'
 
 class App extends Component {
 
@@ -42,14 +43,22 @@ class App extends Component {
             <div className="app-container">
               <div className="toDos-container">
                 <div>
-                  <Link to="/user"> Home </Link>
+                  <Link to="/user"> List </Link>
                   <Link to="/user/create"> Create New </Link>
                 </div>
+                
                 <Route path="/user/create"
                   render={(props) => (
                     <Form handleSubmit={this.props.addToDo} {...props} />
                   )}
                 />
+                  
+                <Route path="/user/edit/:toDoId"
+                  render={(props) => (
+                    <EditForm toDos={this.props.toDos}{...props}/>
+                  )}
+                />
+
 
                 <div className="toDos-layout">
                   {this.props.toDos.length ?
@@ -61,7 +70,9 @@ class App extends Component {
                       key={toDo.id}
                       title={toDo.title}
                       description={toDo.description}
-                      handleClick={() => this.props.deleteToDo(toDo.id)}
+                      handleClickEdit={() => 
+                        this.props.history.push(`/user/edit/${toDo.id}`)}
+                      handleClickDelete={() => this.props.deleteToDo(toDo.id)}
                     />
                   ))}
                 </div>
